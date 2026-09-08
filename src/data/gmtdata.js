@@ -45,20 +45,14 @@ export const tabContent = {
                     "Ten Free Topic-wise Practice Tests"
                 ],
                  "purchasedPractice": [
-                    // "10 Mock-Tests",
-                    // "Hundreds of Topic-wise Practice Tests",
-                    // "SSI E-book for Practice",
-                    // "Free 6-hour Webinar",
-                    // "Doubt-clearance Sessions for 6+6 Hours",
-                    // "Monitoring of Performance and Alerts",
-                    // "WhatsApp Support"
-                    // "Practice (Grand)":  [
                     "Full-length Adaptive Mock-Tests",
                     "Topic- wise Sectional Tests ",
                     "Detailed solution of each test",
                     "Live online workshops",
-                    "Live online doubt clearance "
-                ]
+                    "Live online doubt clearance ",
+                    
+                ],
+                "Price":{label: 'Price', amount: 5000 }
             }
         ]
     },

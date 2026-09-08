@@ -35,6 +35,8 @@ export const tabContent = {
     },
     PracticeMaterial: {
         title: 'Practice Material',
+        title1: 'Practice [Grand]',
+        title2: 'Practice [Basic]',
         description:
             [
             {
@@ -43,14 +45,29 @@ export const tabContent = {
                     "Ten Free Topic-wise Practice Tests"
                 ],
                 "purchasedPractice": [
-                    "10 Mock-Tests",
-                    "Hundreds of Topic-wise Practice Tests",
-                    "SSI E-book for Practice",
-                    "Free 6-hour Webinar",
-                    "Doubt-clearance Sessions for 6+6 Hours",
-                    "Monitoring of Performance and Alerts",
-                    "WhatsApp Support"
-                ]
+                    "Full-length Mock Tests [Adaptive]",
+                    "Topic-wise Sectional Tests",
+                    "Speedy Tests",
+                    "Detailed analysis of each test",
+                    "e-Books",
+                    "Printed Books",
+                    "Vocabulary Builder",
+                    "Live online Workshops",
+                    "Live online doubt clearance sessions",
+                    
+                ],
+                "purchasedPracticePrice": { label: 'Practice [Grand]', amount: 6000 },
+                
+                "purchasedPractice1": [
+                    "Full-length Mock Tests [Adaptive]",
+                    "Topic-wise Sectional Tests",
+                    "Speedy Tests",
+                    "Detailed analysis of each test",
+                    "e-Books",
+                    "Vocabulary Builder",
+                    "Pre-recorded doubt clearance videos",
+                ],
+                "purchasedPractice1Price": { label: 'Practice [Basic]', amount: 4500 }
             }
             
         ]    
