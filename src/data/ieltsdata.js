@@ -39,7 +39,9 @@ export const tabContent = {
         imageAlt: 'IELTS Self Learning program',
     },
     PracticeMaterial: {
-        title: 'Practice Material',
+        title: 'Practice Material - IELTS',
+        title1: 'Practice [Grand]',
+        title2: 'Practice [Large]',
         description:
         [
             {

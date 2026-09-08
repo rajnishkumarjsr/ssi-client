@@ -35,7 +35,7 @@ export const tabContent = {
         imageAlt: 'GMAT Self Learning program',
     },
     PracticeMaterial: {
-        title: 'Practice Material',
+        title: 'Practice Material - GMAT',
         title1: 'Exclusive Practice',
         description:
         [
@@ -52,7 +52,7 @@ export const tabContent = {
                     "Live online doubt clearance ",
                     
                 ],
-                "Price":{label: 'Price', amount: 5000 }
+                "purchasedPracticePrice": { label: 'Exclusive Practice', amount: 5000 },
             }
         ]
     },

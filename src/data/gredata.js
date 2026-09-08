@@ -36,7 +36,9 @@ export const tabContent = {
         imageAlt: 'GRE Self Learning program',
     },
     PracticeMaterial: {
-        title: 'Practice Material',
+        title: 'Practice Material - GRE',
+        title1: 'Practice [Grand]',
+        title2: 'Practice [Large]',
         description:
         [
             {
@@ -67,7 +69,7 @@ export const tabContent = {
                     "Vocabulary Builder",
                     "Pre-recorded doubt clearance videos",
                 ],
-                "purchasedPractice1Price": { label: 'Practice [Basic]', amount: 4500 }
+                "purchasedPractice1Price": { label: 'Practice [Large]', amount: 4500 }
             }
             
         ]

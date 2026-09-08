@@ -136,6 +136,29 @@ export default function GMAT() {
         );
     };
 
+    const handlePracticeMaterialEnroll = (material) => {
+            if (!getUser()) return navigate('/login');
+
+            const amount = geoCountry === 'IN'
+                ? material.amount
+                : Math.round(material.amount / usdToInrRate);
+            const selection = {
+                courseId: course?.id || 'gre',
+                programName: 'GRE',
+                tab: 'materials',
+                country: geoCountry,
+                currency: geoCountry === 'IN' ? 'INR' : 'USD',
+                items: [{ label: material.label, amount }],
+                totalAmount: amount,
+            };
+
+            sessionStorage.setItem('courseEnrollmentSelection', JSON.stringify(selection));
+            sessionStorage.setItem('greEnrollmentSelection', JSON.stringify(selection));
+            navigate(`/enroll?course=${selection.courseId}&country=${geoCountry}&type=PM`, {
+                state: { courseEnrollmentSelection: selection, greEnrollmentSelection: selection },
+            });
+        };
+
     const renderPracticeMaterial = () => {
         const practiceMaterial = tabContent.PracticeMaterial;
         if (Array.isArray(practiceMaterial.description)) {
@@ -143,7 +166,8 @@ export default function GMAT() {
             return (
                 <Section title={practiceMaterial.title}>
                     {Array.isArray(practiceData.freePractice) ? <><h4>Free Practice</h4><ul>{practiceData.freePractice.map((item, index) => <li key={`free-${index}`} style={{ marginLeft: '40px' }}>{item}</li>)}</ul></> : null}
-                    {Array.isArray(practiceData.purchasedPractice) ? <><h4>{practiceMaterial.title1}</h4><ul>{practiceData.purchasedPractice.map((item, index) => <li key={`purchased-${index}`} style={{ marginLeft: '40px' }}>{item}</li>)}</ul></> : null}
+                    {/* {Array.isArray(practiceData.purchasedPractice) ? <><h4>{practiceMaterial.title1}</h4><ul>{practiceData.purchasedPractice.map((item, index) => <li key={`purchased-${index}`} style={{ marginLeft: '40px' }}>{item}</li>)}</ul></> : null} */}
+                    {Array.isArray(practiceData.purchasedPractice) ? <><h4>{practiceMaterial.title1}</h4><ul>{practiceData.purchasedPractice.map((item, index) => <li key={`purchased-${index}`} style={{ marginLeft: '40px' }}>{item}</li>)}</ul>{practiceData.purchasedPracticePrice ? <div className="practice-material-purchase"><strong>{`Price: ${formatFeeAmount(practiceData.purchasedPracticePrice.amount)}`}</strong><button type="button" className="btn-enroll" onClick={() => handlePracticeMaterialEnroll(practiceData.purchasedPracticePrice)}>Buy Now</button></div> : null}</> : null}
                 </Section>
             );
         }
@@ -192,8 +216,6 @@ export default function GMAT() {
                 <Section title={content.title}><Description value={content.description} /></Section>
                 {content.oneOnoneTitle || content.oneOnone ? <><br /><Section title={content.oneOnoneTitle}><p>{content.oneOnone}</p></Section></> : null}
                 <br />
-                {renderPracticeMaterial()}
-                <br />
                 <Section title={content.feeTitle}>{renderSelectableFeeList(tabKey, content.fee)}</Section>
                 <hr className="course-detail-divider-top" />
                 <br />
@@ -202,8 +224,7 @@ export default function GMAT() {
         );
     };
 
-    const currentTab = tabContent[activeTab];
-    const showCourseDetails = activeTab === 'online';
+    const currentTab = tabContent[activeTab] || tabContent.online;
 
     return (
         <main>
@@ -211,6 +232,7 @@ export default function GMAT() {
                 <div className="course-detail-tabs" role="tablist" aria-label="GMAT programs">
                     <button type="button" className={`course-detail-tab ${activeTab === 'online' ? 'is-active' : ''}`} role="tab" id="gmat-online-tab" aria-selected={activeTab === 'online'} aria-controls="gmat-online-panel" onClick={() => setActiveTab('online')}>Online</button>
                     <button type="button" className={`course-detail-tab ${activeTab === 'selfLearning' ? 'is-active' : ''}`} role="tab" id="gmat-self-learning-tab" aria-selected={activeTab === 'selfLearning'} aria-controls="gmat-self-learning-panel" onClick={() => setActiveTab('selfLearning')}>Self Learning</button>
+                    <button type="button" className={`course-detail-tab ${activeTab === 'materials' ? 'is-active' : ''}`} role="tab" id="gmat-materials-tab" aria-selected={activeTab === 'materials'} aria-controls="gmat-materials-panel" onClick={() => setActiveTab('materials')}>Materials</button>
                     <button type="button" className="course-detail-tab self-learning-flash" onClick={() => setShowSelfLearningPopup(true)}>Free Diagnostic</button>
                 </div>
 
@@ -236,8 +258,9 @@ export default function GMAT() {
                 <div className="course-detail-grid">
                     <div className="course-detail-image course-detail-image-top-left"><img src={currentTab.image} alt={currentTab.imageAlt} /></div>
                     <div className="course-detail-content">
-                        <div role="tabpanel" id="gmat-online-panel" aria-labelledby="gmat-online-tab" hidden={!showCourseDetails}>{renderTabContent('online', 'OL')}</div>
-                        <div role="tabpanel" id="gmat-self-learning-panel" aria-labelledby="gmat-self-learning-tab" hidden={showCourseDetails}>{renderTabContent('selfLearning', 'SL')}</div>
+                        <div role="tabpanel" id="gmat-online-panel" aria-labelledby="gmat-online-tab" hidden={activeTab !== 'online'}>{renderTabContent('online', 'OL')}</div>
+                        <div role="tabpanel" id="gmat-self-learning-panel" aria-labelledby="gmat-self-learning-tab" hidden={activeTab !== 'selfLearning'}>{renderTabContent('selfLearning', 'SL')}</div>
+                        <div role="tabpanel" id="gmat-materials-panel" aria-labelledby="gmat-materials-tab" hidden={activeTab !== 'materials'}>{renderPracticeMaterial()}</div>
                     </div>
                 </div>
             </section>
