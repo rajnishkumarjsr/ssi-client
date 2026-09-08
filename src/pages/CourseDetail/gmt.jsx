@@ -105,6 +105,9 @@ export default function GMAT() {
                             clearTabSelections(tabKey, setSelectedOneOnOneFees);
                             return;
                         }
+                        if (checked) {
+                            setSelectedOneOnOneFees((current) => ({ ...current, [oneOnOneKey]: false }));
+                        }
                         setSelectedFees((current) => ({ ...current, [feeKey]: checked }));
                     };
 
@@ -113,6 +116,9 @@ export default function GMAT() {
                             clearTabSelections(tabKey, setSelectedFees, feeKey, false);
                             clearTabSelections(tabKey, setSelectedOneOnOneFees, oneOnOneKey, true);
                             return;
+                        }
+                        if (checked) {
+                            setSelectedFees((current) => ({ ...current, [feeKey]: false }));
                         }
                         setSelectedOneOnOneFees((current) => ({ ...current, [oneOnOneKey]: checked }));
                     };
