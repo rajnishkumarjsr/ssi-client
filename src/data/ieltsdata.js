@@ -3,7 +3,7 @@ export const tabContent = {
         title: 'IELTS Live Online',
         description: "Our Live Online lessons on IELTS give feel of being in a physical set up and mastering the skills at ease. The lessons embedded with technology bridge the geographical chasm in such a manner that a learner may feel the care of in-person class.",
         
-        oneOnoneTitle: 'GMAT 1-on-1 ',
+        oneOnoneTitle: 'IELTS 1-on-1 ',
         oneOnone:
             'We offer the option of one-on-one live online learning facility for any aspirant who opts for individual guidance. This facility is open for all geographies.',
         
@@ -48,14 +48,28 @@ export const tabContent = {
                     "Ten topic-wise practice tests"
                 ],
                 "purchasedPractice": [
-                    "20 Mock Tests",
-                    "Hundreds of topic-wise practice tests",
-                    "SSI e-book for practice ",
-                    "Free 6-hours webinar",
-                    "Doubt-clearance sessions for 6 hours",
-                    "Monitoring performance and alerts",
-                    "WhatsApp support"
-                ]
+                    "Full-length Mock Tests",
+                    "Module-wise Mock Tests",
+                    "Item-wise Mock Tests",
+                    "Weekly Mock Tests",
+                    "Topic-wise lecture slides",
+                    "AI evaluation of Speaking and Writing sections",
+                    "e-Books",
+                    "Live online score booster workshop sessions",
+                    "Expert evaluation"
+                ],
+                "purchasedPracticePrice": { label: 'Practice [Grand]', amount: 5500 },
+                
+                "purchasedPractice1": [
+                    "Full-length Mock Tests",
+                    "Module-wise Mock Tests",
+                    "Item-wise Mock Tests",
+                    "Weekly Mock Tests",
+                    "Topic-wise lecture slides",
+                    "AI evaluation of Speaking and Writing sections"
+                ],
+                
+                "purchasedPractice1Price": { label: 'Practice [Large]', amount: 4000 }
             }
             
         ]

@@ -154,9 +154,9 @@ export default function Sat() {
             };
 
             sessionStorage.setItem('courseEnrollmentSelection', JSON.stringify(selection));
-            sessionStorage.setItem('gmatEnrollmentSelection', JSON.stringify(selection));
+            sessionStorage.setItem('satEnrollmentSelection', JSON.stringify(selection));
             navigate(`/enroll?course=${selection.courseId}&country=${geoCountry}&type=PM`, {
-                state: { courseEnrollmentSelection: selection, gmatEnrollmentSelection: selection },
+                state: { courseEnrollmentSelection: selection, satEnrollmentSelection: selection },
             });
         };
     
@@ -204,9 +204,9 @@ export default function Sat() {
             if (!hasSelectedCourseFee(tabKey)) return window.alert('Please select at least one course');
             const selection = buildEnrollmentSelection(tabKey);
             sessionStorage.setItem('courseEnrollmentSelection', JSON.stringify(selection));
-            sessionStorage.setItem('gmatEnrollmentSelection', JSON.stringify(selection));
+            sessionStorage.setItem('satEnrollmentSelection', JSON.stringify(selection));
             navigate(`/enroll?course=${selection.courseId}&country=${geoCountry}&type=${enrollType}`, {
-                state: { courseEnrollmentSelection: selection, gmatEnrollmentSelection: selection },
+                state: { courseEnrollmentSelection: selection, satEnrollmentSelection: selection },
             });
         };
     

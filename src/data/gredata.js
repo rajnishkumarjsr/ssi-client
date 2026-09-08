@@ -3,7 +3,7 @@ export const tabContent = {
         title: 'GRE Live Online',
         description: 
         'This course has been tailored to suit all sorts of aspirants—Student, Professionals, or Businessmen. A GRE Test Taker may feel comfort of home or office and learn in the presence of instructor online. The most important benefit a trainee enjoys is unlimited access to instructor until s/he has written the test. Also, there is a provision of additional Vocabulary Building session live online in most interesting manner. S/he may repeat all lessons within six months of enrolment if s/he encounters roadblocks while cracking questions.',
-        oneOnoneTitle: 'GMAT 1-on-1 ',
+        oneOnoneTitle: 'GRE 1-on-1 ',
         oneOnone:
             'We offer the option of one-on-one live online learning facility for any aspirant who opts for individual guidance. This facility is open for all geographies.',
         
@@ -45,14 +45,29 @@ export const tabContent = {
                     "Ten Free Topic-wise Practice Tests"
                 ],
                 "purchasedPractice": [
-                    "10 Mock-Tests",
-                    "Hundreds of Topic-wise Practice Tests",
-                    "SSI E-book for Practice",
-                    "Free 6-hour Webinar",
-                    "Doubt-clearance Sessions for 6+6 Hours",
-                    "Monitoring of Performance and Alerts",
-                    "WhatsApp Support"
-                ]
+                    "Full-length Mock Tests [Adaptive]",
+                    "Topic-wise Sectional Tests",
+                    "Speedy Tests",
+                    "Detailed analysis of each test",
+                    "e-Books",
+                    "Printed Books",
+                    "Vocabulary Builder",
+                    "Live online Workshops",
+                    "Live online doubt clearance sessions",
+                    
+                ],
+                "purchasedPracticePrice": { label: 'Practice [Grand]', amount: 6000 },
+                
+                "purchasedPractice1": [
+                    "Full-length Mock Tests [Adaptive]",
+                    "Topic-wise Sectional Tests",
+                    "Speedy Tests",
+                    "Detailed analysis of each test",
+                    "e-Books",
+                    "Vocabulary Builder",
+                    "Pre-recorded doubt clearance videos",
+                ],
+                "purchasedPractice1Price": { label: 'Practice [Basic]', amount: 4500 }
             }
             
         ]

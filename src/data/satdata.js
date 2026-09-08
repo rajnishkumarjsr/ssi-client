@@ -3,7 +3,7 @@ export const tabContent = {
         title: 'SAT Live Online',
         description: 
         'The design of this course avails a trainee of world-class instruction at her/ his doorstep. S/he can master best tricks of the trade from the instructor in the comfort of home. The live online brings the best of experiences of mastering the art of vocabulary through multidimensional approaches. Besides a candidate has the liberty of doubt-clearance right during the scheduled session, reducing the dogma of seeking appointment.  Additionally, s/ he may repeat all lessons within six months of enrolment if she/he encounters challenges in cracking questions.',
-        oneOnoneTitle: 'GMAT 1-on-1 ',
+        oneOnoneTitle: 'SAT 1-on-1 ',
         oneOnone:
             'We offer the option of one-on-one live online learning facility for any aspirant who opts for individual guidance. This facility is open for all geographies. ',
         
