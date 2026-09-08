@@ -32,7 +32,7 @@ export const tabContent = {
         feeTitle: 'Fee Structure:',
         fee: [
             { label: 'Complete Course Fee', amount: 7500 },
-            { label: 'Study Material:', amount: 2000},
+            // { label: 'Study Material:', amount: 2000},
 
         ],
         image: '/images/IELTS.png',
