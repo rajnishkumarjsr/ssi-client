@@ -618,6 +618,11 @@ main {
     margin-bottom: 1.5rem;
 }
 
+.form-group-reg {
+    margin-bottom: 1.5rem;
+    width: 450px;
+}
+
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;

@@ -1056,6 +1056,15 @@ main {
   max-width: 450px;
 }
 
+.auth-card-Reg {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 750px;
+}
+
 .auth-header {
   text-align: center;
   margin-bottom: 2rem;

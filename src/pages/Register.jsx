@@ -9,9 +9,7 @@ const initialForm = {
   username: '',
   password: '',
   confirm_password: ''
-  // learning_goal: '',
-  // terms: false,
-  // newsletter: false
+  
 };
 
 const API_DOMAIN = import.meta.env.VITE_API_DOMAIN;
@@ -73,7 +71,7 @@ export default function Register() {
       const requestBody = {
         name: formData.name,
         email: formData.email,
-        mobile: formData.mobile,
+        phone: formData.mobile,
         username: formData.username,
         password: formData.password
       }
@@ -135,13 +133,13 @@ export default function Register() {
   return (
     <main>
       <div className="auth-container">
-        <div className="auth-card">
+        <div className="auth-card-Reg">
           <div className="auth-header">
             <h1>Join SSI Educational Services</h1>
             <p>Start your learning journey today</p>
           </div>
 
-          {feedback.text ? (
+          {/* {feedback.text ? (
             <div
               className={`alert ${
                 feedback.type === 'success' ? 'alert-success' : 'alert-error'
@@ -149,7 +147,7 @@ export default function Register() {
             >
               {feedback.text}
             </div>
-          ) : null}
+          ) : null} */}
 
           <form className="auth-form" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -270,6 +268,16 @@ export default function Register() {
                 Send me course recommendations and updates
               </label>
             </div>
+
+            {feedback.text ? (
+              <div
+                className={`alert ${
+                  feedback.type === 'success' ? 'alert-success' : 'alert-error'
+                }`}
+              >
+                {feedback.text}
+              </div>
+            ) : null}
 
             <button type="submit" className="btn-submit" disabled={isSubmitting}>
               {isSubmitting ? 'Creating...' : 'Create Account'}
