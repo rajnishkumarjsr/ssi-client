@@ -7,14 +7,15 @@ export const tabContent = {
         oneOnone:
             'We offer the option of one-on-one live online learning facility for any aspirant who opts for individual guidance. This facility is open for all geographies.',
         feeTitle: 'Fee Structure:',
-        // 
         fee: [
-            { label: 'Complete Course INR ', amount: 45000},
-            // { label: 'US $', amount: 500},
-            // { label: 'NPR ', amount: 10000,},
-           
+            { label: 'Complete Course ', amount: 45000, oneOnOneAmount: 90000 },
+            { label: 'Verbal Reasoning [Full Course]', amount: 25000, oneOnOneAmount: 50000 },
+            { label: 'Data Insight [Full Course]', amount: 12000, oneOnOneAmount: 24000 },
+            { label: 'Quantitative Reasoning [Full Course]', amount: 8000, oneOnOneAmount: 16000 },
+            { label: 'Critical Reasoning', amount: 10000, oneOnOneAmount: 20000 },
+            { label: 'Reading Comprehension', amount: 15000, oneOnOneAmount: 30000 },
+            { label: 'Study Material:', amount: 2500 },
         ],
-
         image: '/images/GMAT.png',
         imageAlt: 'GMAT Online program',
     },
